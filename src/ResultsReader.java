@@ -25,7 +25,7 @@ public class ResultsReader {
                 team2Goals = new Integer(arr[3]);
                 MatchResult matchResult = new MatchResult(team1,team2,team1Goals,team2Goals);
                 resultList.add(matchResult);
-                System.out.println("added: " + matchResult.toString() );
+                //System.out.println("added: " + matchResult.toString() );
             }
 
         } catch (IOException e) {

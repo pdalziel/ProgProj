@@ -16,7 +16,7 @@ public class TeamReader {
             while ((name = br.readLine()) != null) {
                 Team team = new Team(name);
                 teamList.add(team);
-                System.out.println("added: " + team.toString());
+                //System.out.println("added: " + team.toString());
             }
 
         } catch (IOException e) {
