@@ -13,6 +13,7 @@ public class Team {
 
     public Team(String name) {
         this.name = name;
+        this.award = "none";
     }
 
     public String getAward() {
@@ -86,4 +87,11 @@ public class Team {
     public void setGoalsAgainst(int goalsAgainst) {
         this.goalsAgainst = goalsAgainst;
     }
+
+    @Override
+    public String toString() {
+        return name + "\t " + rank + "\t " + draws + "\t" + lost + "\t" + goalsFor + "\t" + goalsAgainst + "\t" + points+ "\t" + goalDifference + "\t" + award;
+    }
+
+
 }

@@ -8,22 +8,22 @@ import java.util.Arrays;
 
 public class TeamReader {
 
-
-    public static void main(String args[]) {
-
-        String fileName = "/home/paul/IdeaProjects/ProgProj/src/TeamsIn.txt";
-
+    private String fileName = "TeamsIn.txt";
+    ArrayList<Team> teamList = new ArrayList<Team>();
+    public ArrayList<Team> readInTeams() {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
+            String name;
+            while ((name = br.readLine()) != null) {
+                Team team = new Team(name);
+                teamList.add(team);
+                System.out.println("added: " + team.toString());
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        return teamList;
     }
 
 }
