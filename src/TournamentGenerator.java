@@ -9,6 +9,13 @@ public class TournamentGenerator {
             for (int j = i+1; j < teamsList.size()-1; j++) {
                 //System.out.println(teamsList.get(i).name + "\t" + teamsList.get(j).name);
                 Match match = new Match(teamsList.get(i), teamsList.get(j));
+                if (match.team1.name.compareToIgnoreCase(match.team2.name)>0){
+
+                    Team temp = match.team1;
+                    match.team1 = match.team2;
+                    match.team2 = temp;
+        ;
+                }
                 matchList.add(match);
             }
         }
