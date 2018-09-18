@@ -3,7 +3,7 @@ import java.lang.String;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class JavaBall {
+public class JavaBallApp {
 
     public static void main(String[] args){
         TeamReader tr = new TeamReader();
@@ -15,6 +15,8 @@ public class JavaBall {
         ResultsWriter writer = new ResultsWriter();
         writer.writeResults(results);
 
+        JavaBallGUI gui = new JavaBallGUI();
+
         //Team team1 = teamList.get(0);
         //Team team2 = teamList.get(1);
 
@@ -23,6 +25,15 @@ public class JavaBall {
         TournamentGenerator tg = new TournamentGenerator();
         ArrayList<Match> matchList = tg.generateTouranment(teamList);
         System.out.println(matchList.size());
+        //ButtonFrame bf = new ButtonFrame(matchList);
+        //
+
+
+
+    }
+
+
+    public static void sortMatchList(ArrayList<Match> matchList) {
         Collections.sort(matchList, new Comparator<Match>() {
             @Override
             public int compare(Match o1, Match o2) {
@@ -31,8 +42,6 @@ public class JavaBall {
                 return o1Team.compareToIgnoreCase(o2Team);
             }
         });
-
-
         for (Match m :matchList) {
             System.out.println(m.team1.toString() + "  " + m.team2.toString());
         }

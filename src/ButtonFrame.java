@@ -1,23 +1,26 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+import java.util.ArrayList;
 
-    public class ButtonFrame extends JFrame
+public class ButtonFrame extends JFrame
             implements ActionListener
     {
         // We need to refer to these objects in
         // actionPerformed
         private JButton button1, button2, button3, button4,
                 button5, button6, button7, button8;
+        private ArrayList<Match> matchList;
 
         // The constructor sets up the initial window
         // and then waits for events.
-        public ButtonFrame()
+        public ButtonFrame(ArrayList<Match> matchList)
         {
+            this.matchList = matchList;
             // set the basic window properties
             setTitle("Button Frame");
-            setSize(200, 200);
-            setLocation(700, 700);
+            setSize(1080, 720);
+            setLocation(0, 0);
 
             // replace default BorderLayout
 // with a 2x2 grid
@@ -26,7 +29,7 @@ import java.awt.*;
 
             // create the two buttons
             button1 = new JButton("Press Me");
-            button2 = new JButton("Press Me Too");
+            button2 = new JButton("Sort results");
 
             // position the buttons on the window.
             add(button1, "Center");
@@ -90,6 +93,7 @@ import java.awt.*;
             else if (e.getSource() == button2)
             {
                 System.err.println("Stop It");
+                JavaBallApp.sortMatchList(matchList);
                 // disable button2, enable button1
                 button1.setEnabled(true);
                 button2.setEnabled(false);
