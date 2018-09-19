@@ -93,7 +93,7 @@ public class ButtonFrame extends JFrame
             else if (e.getSource() == button2)
             {
                 System.err.println("Stop It");
-                JavaBallApp.sortMatchList(matchList);
+                //JavaBallApp.sortMatchList(matchList);
                 // disable button2, enable button1
                 button1.setEnabled(true);
                 button2.setEnabled(false);

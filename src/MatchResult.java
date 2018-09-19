@@ -45,7 +45,7 @@ public class MatchResult {
 
     @Override
     public String toString() {
-        return  team1 + " " + team1Goals + " " +  team2 + " " + team2Goals;
+        return  team1 + " " + team1Goals + " " +  team2 + " " + team2Goals + "\n" ;
     }
 
 }
