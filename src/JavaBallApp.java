@@ -7,6 +7,7 @@ public class JavaBallApp {
 
     public static void main(String[] args){
         TeamReader tr = new TeamReader();
+        System.out.println("A change");
         ArrayList<Team> teamList = tr.readInTeams();
 
         JavaBallGUI gui = new JavaBallGUI(teamList, teamList.size());
